@@ -19,17 +19,16 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-/* static const char *tags[] = { "一", "二", "三", "四", "五" }; */
 static const char *tags[] = { 
 	"\uf120", 
 	"\uf7ae", 
-	"\uf121", 
-	"\uf04b", 
+	"\uf251", 
+	"\uf684", 
+	"\uf04b" 
+	//"\uf121", 
 	//"\ue62e", 
-	//"\uf251", 
 	//"\ue727", 
 	//"\uf537", 
-	"\uf684" 
 };
 
 static const Rule rules[] = {
