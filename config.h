@@ -71,6 +71,11 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
 static const char *chromecmd[]  = { "google-chrome-stable", NULL };
 static const char *flameshotcmd[]  = { "flameshot", "gui", NULL };
+static const char *lightup[] = {"xbacklight", "-inc", "10", NULL};
+static const char *lightdown[] = {"xbacklight", "-dec", "5", NULL};
+static const char *soundup[] = {"amixer", "-qM", "sset", "Master", "5%+", "unmute", NULL};
+static const char *sounddown[] = {"amixer", "-qM", "sset", "Master", "10%-", "unmute", NULL};
+static const char *mute[] = {"amixer", "-qM", "sset", "Master", "toggle", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -79,6 +84,11 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = slockcmd } },
 	{ MODKEY|ShiftMask,             XK_a,	   spawn,          {.v = flameshotcmd } },
 	{ MODKEY,                       XK_c,	   spawn,          {.v = chromecmd } },
+	{ MODKEY,			XK_Left,   spawn,	   {.v = lightup } },
+	{ MODKEY,			XK_Right,  spawn,	   {.v = lightdown } },
+	{ MODKEY,			XK_Up,	   spawn,	   {.v = soundup } },
+	{ MODKEY,			XK_Down,   spawn,	   {.v = sounddown } },
+	{ MODKEY,			XK_F8,	   spawn,	   {.v = mute } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
