@@ -22,10 +22,10 @@ static const char *colors[][3]      = {
 static const char *tags[] = { 
 	"\uf120", 
 	"\uf7ae", 
-	"\uf251", 
+	//"\uf251", 
+	"\uf121", 
 	"\uf684", 
-	"\uf04b" 
-	//"\uf121", 
+	//"\uf04b", 
 	//"\ue62e", 
 	//"\ue727", 
 	//"\uf537", 
