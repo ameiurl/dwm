@@ -62,7 +62,12 @@ static const unsigned int alphas[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "", "" };
+// static const char *tags[] = { "", "", "", "", "", "", "", "" };
+// static const char *tags[] = { "", "", "", "",  "", "", "", "" };
+// static char *tags[] = {"", "", "", "", ""};
+// static const char *tags[] = { " ", " ", " ", " ", " ", "  ", " ", " ", " " };
+// static const char *tags[] = { "", "亂", "", "", "", "ﭮ" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -105,6 +110,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]   = { "st", NULL };
 static const char *chromecmd[]  = { "google-chrome-stable", NULL };
 static const char *edgecmd[]  = { "microsoft-edge-stable", NULL };
+static const char *flameshotcmd[]  = { "flameshot", "gui", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
 static const char *ranger[]    = { "st", "-e", "ranger", NULL };
 static const char *nvim[]      = { "st", "-e", "nvim", NULL };
@@ -119,6 +125,7 @@ static const char *mute[] = {"amixer", "-qM", "sset", "Master", "toggle", NULL};
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = slockcmd } },
+	{ MODKEY|ShiftMask,             XK_a,	   spawn,          {.v = flameshotcmd } },
 	{ MODKEY,                       XK_e,	   spawn,          {.v = edgecmd } },
 	{ MODKEY,                       XK_c,	   spawn,          {.v = chromecmd } },
 	{ MODKEY,			            XK_Left,   spawn,	       {.v = lightup } },
@@ -126,10 +133,11 @@ static Key keys[] = {
 	{ MODKEY,			            XK_Up,	   spawn,	       {.v = soundup } },
 	{ MODKEY,			            XK_Down,   spawn,	       {.v = sounddown } },
 	{ MODKEY,			            XK_F8,	   spawn,	       {.v = mute } },
+	{ MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
 	{ MODKEY|ShiftMask,           	XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,						XK_r,	   spawn,          {.v = ranger } },
 	{ MODKEY,						XK_n,	   spawn,          {.v = nvim } },
-	{ MODKEY,						XK_e,	   spawn,          {.v = music } },
+	{ MODKEY|ShiftMask,				XK_e,	   spawn,          {.v = music } },
 	{ MODKEY,						XK_F1,	   spawn,          {.v = flameshot } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
@@ -143,7 +151,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	// { MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY,         		  		XK_q,      killclient,     {0} },
+	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[2]} },
