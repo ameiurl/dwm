@@ -11,7 +11,7 @@ dwm_rainbarf() {
 }
 
 # Prints out the CPU load percentage
-get_cpuload()
+dwm_cpuload()
 {
   # Get the first line with aggregate of all CPUs
   cpu_last=($(head -n1 /proc/stat))
@@ -33,44 +33,36 @@ get_cpuload()
   cpu_last=("${cpu_now[@]}")
   cpu_last_sum=$cpu_sum
 
-  echo "  $cpu_usage%"
+  # echo "  $cpu_usage%"
+  echo "CPU $cpu_usage%"
 }
 
 # Prints the total ram and used ram in Mb
-get_ram()
+dwm_ram()
 {
     TOTAL_RAM=$(free -mh --si | awk  {'print $2'} | head -n 2 | tail -1)
     USED_RAM=$(free -mh --si | awk  {'print $3'} | head -n 2 | tail -1)
     MB="MB"
 
-    echo "💻 $USED_RAM/$TOTAL_RAM"
+    echo "💻MEM $USED_RAM/$TOTAL_RAM"
 }
 
 # Prints out the volume percentage
-get_volume(){
+dwm_volume(){
     volume="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
     if test "$volume" -gt 0
     then
         echo "  $volume%"
     else
-        echo "  $volume%"
+        echo " $volume%"
     fi
 }
 
-# Prints out the date
-get_date()
-{
-    echo "'  $(date '+%y-%m-%d (%a)')"
-}
-
-# Prints out the time
-get_time()
-{
-    echo "  $(date '+%H:%M')"
+dwm_date () {
+	printf "  %s   %s" "$(date +%Y.%m.%d)" "$(date +%H:%M)"
 }
 
 while true; do
-  xsetroot -name "|$(dwm_rainbarf) | $(get_cpuload) | $(get_ram) | $(get_volume) | $(get_date) | $(get_time) |"
+  xsetroot -name "$(dwm_rainbarf)  $(dwm_ram)  $(dwm_cpuload)  $(dwm_volume)  $(dwm_date)"
   sleep 0.2
 done &
-
