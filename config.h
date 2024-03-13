@@ -65,7 +65,6 @@ static const unsigned int alphas[][3] = {
 static const char *tags[] = { "", "", "", "", "", "", "", "", "", "" };
 // static const char *tags[] = { "", "", "", "", "", "", "", "" };
 // static const char *tags[] = { "", "", "", "",  "", "", "", "" };
-// static char *tags[] = {"", "", "", "", ""};
 // static const char *tags[] = { " ", " ", " ", " ", " ", "  ", " ", " ", " " };
 // static const char *tags[] = { "", "亂", "", "", "", "ﭮ" };
 
