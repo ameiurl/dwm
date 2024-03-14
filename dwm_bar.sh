@@ -44,7 +44,7 @@ dwm_ram()
     USED_RAM=$(free -mh --si | awk  {'print $3'} | head -n 2 | tail -1)
     MB="MB"
 
-    echo "💻MEM $USED_RAM/$TOTAL_RAM"
+    echo "💻 MEM $USED_RAM/$TOTAL_RAM"
 }
 
 # Prints out the volume percentage
@@ -63,6 +63,6 @@ dwm_date () {
 }
 
 while true; do
-  xsetroot -name "$(dwm_rainbarf)  $(dwm_ram)  $(dwm_cpuload)  $(dwm_volume)  $(dwm_date)"
+  xsetroot -name "$(dwm_rainbarf)  $(dwm_ram) | $(dwm_cpuload) | $(dwm_volume) | $(dwm_date)"
   sleep 0.2
 done &
