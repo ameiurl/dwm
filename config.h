@@ -62,18 +62,14 @@ static const unsigned int alphas[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "", "" };
-// static const char *tags[] = { "", "󰅩", "", "" , "", "", "", "", "" };
-// static const char *tagsalt[] = { "󰖟", "", "", "󰙯", "", "󰎈", "󰕝", "", "" };
-//static const char *tags[] = { " ", " ", " " , " ", " ", " ", " ", " ", " " };
-// static const char *tags[] = { "", "", "", "", "", "", "", "", ""};
-// static const char *tags[] = { "󱍢", "󰈹", "", "", "", "" };
-// static const char *tags[] = { "󰅩", "󰈹", "󰘬", "󰓇", "󰠖", "󱍢"};
-// static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
-// static const char *tags[] = { "", "", "", "", "", "", "", "" };
-// static const char *tags[] = { "", "", "", "",  "", "", "", "" };
-// static const char *tags[] = { " ", " ", " ", " ", " ", "  ", " ", " ", " " };
-
+static const char *tags[] = { "", "", "", "", " ", "", "", "", "", "", "", "" };
+// static const char *tags[] = { "󰅩", "", "", "", "", "" , "  ", "  ", "  ", "  "};
+// static const char *tagsalt[] = { "󰖟", "", "", "󰙯", "", "󰎈", "󰕝", "" };
+//static const char *tags[] = { " ", " ", " ", " ", " ", " " };
+// static const char *tags[] = { "", "", "", "", "󰈹", "󰘬", "󰠖", "󱍢", "", "", "", ""};
+// static const char *tags[] = { "", "", "",  "", "", "","", "", ""};
+// static const char *tags[] = {"", "", "", "", "", " ", " ", "  "};
+ 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
