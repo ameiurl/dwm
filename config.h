@@ -139,7 +139,6 @@ static Key keys[] = {
 	{ MODKEY,			            XK_Up,	   spawn,	       {.v = soundup } },
 	{ MODKEY,			            XK_Down,   spawn,	       {.v = sounddown } },
 	{ MODKEY,			            XK_F8,	   spawn,	       {.v = mute } },
-	{ MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
