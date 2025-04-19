@@ -64,6 +64,6 @@ dwm_date () {
 
 while true; do
   xsetroot -name "$(dwm_rainbarf)  $(dwm_ram)  $(dwm_cpuload)  $(dwm_volume)  $(dwm_date)"
-  sleep 0.2
+  sleep 2
 done
 
